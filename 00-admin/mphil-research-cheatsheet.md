@@ -4,8 +4,11 @@ Keep this open next to your terminal. Everything below assumes you're
 inside the project folder:
 
 ```bash
-cd ~/Downloads/mphil-research
+cd /c/Users/Lenovo/Desktop/shallwe/mphil-research
 ```
+
+(This is Git Bash's way of writing `C:\Users\Lenovo\Desktop\shallwe\mphil-research`.
+If you ever move or rename the folder again, just update this line.)
 
 ---
 
