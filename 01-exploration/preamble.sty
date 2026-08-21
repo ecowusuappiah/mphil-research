@@ -1,0 +1,78 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{preamble}[2026/08/21 Edward's MPhil shared preamble]
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{booktabs}
+\RequirePackage{longtable}
+\RequirePackage{tabularx}
+\RequirePackage{xltabular}
+\RequirePackage{array}
+\RequirePackage{enumitem}
+\RequirePackage{graphicx}
+\RequirePackage{microtype}
+\RequirePackage{setspace}
+\RequirePackage{titlesec}
+\RequirePackage{hyperref}
+\RequirePackage{fancyhdr}
+\RequirePackage{xcolor}
+
+% ============================================================
+% LINE-BREAKING / OVERFULL-HBOX PREVENTION
+% ============================================================
+\tolerance=1000
+\emergencystretch=3em
+\hyphenpenalty=50
+\exhyphenpenalty=50
+\hbadness=10000
+\PassOptionsToPackage{hyphens}{url}
+
+% ============================================================
+% SPACING / LINKS
+% ============================================================
+\onehalfspacing
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    breaklinks=true,
+    bookmarksnumbered=true,
+}
+
+% ============================================================
+% HEADER / FOOTER (each master .tex sets \lhead/\rhead as needed)
+% ============================================================
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+
+% ============================================================
+% PART STYLING
+% ============================================================
+\titleformat{\part}
+    {\clearpage\normalfont\Huge\bfseries\centering}
+    {Part \thepart}{1em}{}
+\titlespacing*{\part}{0pt}{0pt}{2em}
+
+% ============================================================
+% TABLE HELPERS
+% ============================================================
+% Tighter cell padding so multi-column tables fit the text width.
+\setlength{\tabcolsep}{4pt}
+% Centered, fixed-width column type for short rating/status entries.
+\newcolumntype{C}{>{\centering\arraybackslash}p{0.095\textwidth}}
+
+% ============================================================
+% CUSTOM COMMANDS
+% ============================================================
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{TODO:} #1}}
+\newcommand{\researchstatus}[1]{\textit{Status: #1}}
+% Status pill for area workflow.tex files: \areastatus{Explore|Compare|Shortlisted|Rejected}
+\newcommand{\areastatus}[1]{\textbf{Status:} \textcolor{blue}{#1}}

@@ -1,0 +1,12 @@
+# Normalize line endings, keep diffs readable
+* text=auto eol=lf
+
+*.tex text diff=tex
+*.sty text diff=tex
+*.bib text
+*.md  text
+
+# Binary files: never diff as text
+*.pdf -text
+*.png -text
+*.jpg -text

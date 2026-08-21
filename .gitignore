@@ -1,0 +1,31 @@
+# --- LaTeX build artifacts ---
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.run.xml
+*.lof
+*.lot
+
+# --- Build output (compiled PDFs live in build/, not tracked) ---
+build/
+
+# --- OS / editor junk ---
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+
+# --- Data: keep raw/large data out unless you decide otherwise ---
+04-data/raw/
+01-exploration/main.pdf
+06-thesis/main.pdf
