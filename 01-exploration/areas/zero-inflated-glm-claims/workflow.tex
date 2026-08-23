@@ -14,29 +14,55 @@ insurance claims data is a realistic, locally-relevant application.
 
 \subsection*{Key Papers So Far}
 \begin{itemize}
-\item \todo{Add foundational zero-inflated Poisson reference (Lambert
-1992).}
-\item \todo{Add a recent zero-inflated Tweedie / claims-modelling paper --
-full note in \texttt{02-literature/notes/} (see e.g.\ the note stub
-already tagged \texttt{gu2024-zero-inflated-tweedie.md}).}
+\item Lambert (1992) -- the original zero-inflated Poisson (ZIP) model;
+general statistical foundation, not insurance-specific.
+\item Yip \& Yau (2005) -- first direct application of ZIP to claim
+frequency; establishes the problem is real in claims data specifically.
+\item Boucher, Denuit \& Guillen (2007) -- compares zero-inflated mixed
+Poisson against hurdle models for claim-count risk classification.
+\item Alomair (2024) -- direct comparison of ZIP/ZINB/hurdle against
+ML methods (SVM, RF, ANN) on claim frequency; useful methodology
+template.
+\item Gu (2024) -- current frontier of ZIP-Tweedie modelling
+(dispersion + gradient boosting); benchmark for existing sophistication.
+\item Workie \& Azene (2021) -- adjacent-field evidence: zero-inflated/
+hurdle modelling is mature in African demographic data, but not yet
+applied to insurance claims in that setting. See note in
+\texttt{02-literature/notes/}.
 \end{itemize}
 
-\subsection*{Rough Scores (1--5)}
-\begin{tabularx}{\textwidth}{lX}
-\toprule
-\textbf{Novelty} & \todo{Score} \\
-\textbf{Feasibility} & \todo{Score} \\
-\textbf{Data availability} & \todo{Score} -- insurer data access uncertain \\
-\textbf{Supervisor fit} & \todo{Score} \\
-\bottomrule
-\end{tabularx}
+\subsection*{Literature Landscape Check (23 Aug 2026)}
+Searched via FastTrack across OpenAlex/Semantic Scholar, 2020--2025
+window, query ``zero-inflated GLM insurance claim frequency modeling'':
+\textbf{{\raise0pt\hbox{\textasciitilde}}216 papers} in this window --
+an active field, not a closing one. Two dominant live threads:
+(a) ZIP/hurdle vs.\ gradient-boosting/ML comparisons, and (b)
+copula/dependence-structure extensions. Venue spread across the top 20
+most relevant hits: actuarial-specialist journals (\textit{Risks},
+ASTIN Bulletin, NAAJ, Journal of Risk \& Insurance) accounted for 8;
+general statistics/methodology journals for 6; ML/CS venues
+(incl.\ 2 arXiv preprints) for 3; PLoS ONE for 2.
+
+\textbf{Gap check result:} searching specifically for zero-inflated
+models in developing-market/African insurance contexts returned almost
+no insurance-claims papers -- instead surfacing a mature adjacent
+literature applying the same methodology to demographic/public-health
+counts (child mortality, fertility, antenatal care). This is read as
+evidence the gap is genuinely open: the methodology is proven to
+transfer to African/developing-market data structurally, but nobody in
+this window has pointed it at insurance claims specifically.
 
 \subsection*{Next Steps}
 \begin{itemize}[label=$\square$]
-\item \todo{Contact a local insurer / find a public claims dataset as a
-fallback.}
-\item \todo{Read the zero-inflated Tweedie literature and log the gap
-explicitly.}
-\item \todo{Compare feasibility against garch-frontier-markets and
-survival-censoring before narrowing further.}
+\item Contact a local insurer, or identify a public claims dataset
+(e.g.\ French MTPL via \texttt{CASdatasets} in R) as a fallback if
+local data access doesn't come through.
+\item Read Alomair (2024) and Gu (2024) in full to confirm neither
+already tests small/thin-exposure sensitivity under a different framing
+than the search caught.
+\item Draft a one-paragraph gap statement combining Workie \& Azene
+(2021) with the actuarial ZIP/hurdle literature -- this is the
+strongest available novelty argument right now.
+\item Re-run this same landscape check on garch-frontier-markets and
+survival-censoring before committing further time here.
 \end{itemize}

@@ -14,9 +14,13 @@ stays in the area folder — don't delete it).
 |---|---|---|---|---|---|
 | GARCH-family volatility in frontier markets | Compare | High | TBD | [workflow](../01-exploration/areas/garch-frontier-markets/workflow.tex) | [notes](../02-literature/notes/) |
 | Survival analysis under non-standard censoring | Compare | Very High | TBD | [workflow](../01-exploration/areas/survival-censoring/workflow.tex) | [notes](../02-literature/notes/) |
-| Zero-inflated GLMs for insurance claims | Explore | High | TBD | [workflow](../01-exploration/areas/zero-inflated-glm-claims/workflow.tex) | [notes](../02-literature/notes/gu2024-zero-inflated-tweedie.md) |
+| Zero-inflated GLMs for insurance claims | Compare | High (evidenced) | Moderate | [workflow](../01-exploration/areas/zero-inflated-glm-claims/workflow.tex) | [notes](../02-literature/notes/) |
 
 ## Not yet opened as areas (from the initial landscape scan)
+
+**Last evidence check:** zero-inflated-glm-claims — 23 Aug 2026, FastTrack
+literature scan (216 papers, 2020–2025). See workflow.tex for full
+breakdown.
 
 These scored well in the initial scan but don't have a folder yet. Run
 `make new-area NAME=<kebab-case-name>` to open one.
